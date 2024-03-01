@@ -10,7 +10,7 @@ import BookDeleteButton from '@/components/BookDeleteButton'
 
 import api from '@/util/api'
 
-const DESCRIPTION_TRUNCATE_LENGTH = 220
+const DESCRIPTION_TRUNCATE_LENGTH = 200
 
 export default async function Home() {
   const booksResponse = await api.get('/books')
@@ -35,7 +35,7 @@ export default async function Home() {
                 <h4 className="m-0">{book.title}</h4>
               </header>
               <small className="text-muted">{book.author}</small>
-              <p>
+              <p className="m-0">
                 {book.description.substring(0, DESCRIPTION_TRUNCATE_LENGTH)}
                 {(book.description.length > DESCRIPTION_TRUNCATE_LENGTH) && '...'}
               </p>
