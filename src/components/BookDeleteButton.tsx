@@ -17,7 +17,7 @@ export default function BookDeleteButton({ book } : BookDeleteButtonProps) {
 
   return (
     <Button variant="link"
-      className="float-end text-muted"
+      className="float-end text-muted p-0"
       title="Delete this book"
       onClick={onClickDelete(book)}
     >

@@ -21,11 +21,11 @@ export default async function Home() {
       <section className="d-flex justify-content-between align-items-center">
         <h1>Bookshelf</h1>
         <Button as={Link as any} href="/new" title="Create new book">
-          Add Book
+          Add book
         </Button>
       </section>
 
-      <section className="d-grid gap-5 my-5">
+      <section className="d-grid gap-4 my-4">
         {books.map(book => (
           <Card key={book.id} body className="shadow">
             <Image src={book.imageUrl} alt={book.title} className="float-start me-3" />
