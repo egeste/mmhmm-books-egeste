@@ -1,0 +1,7 @@
+$primary: #199C7D;
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+.btn-primary {
+  @extend .text-light;
+}
