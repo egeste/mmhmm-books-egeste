@@ -35,7 +35,7 @@ export default async function Home() {
                 <h4 className="m-0">{book.title}</h4>
               </header>
               <small className="text-muted">{book.author}</small>
-              <p className="m-0">
+              <p className="m-0" title={book.description}>
                 {book.description.substring(0, DESCRIPTION_TRUNCATE_LENGTH)}
                 {(book.description.length > DESCRIPTION_TRUNCATE_LENGTH) && '...'}
               </p>
