@@ -11,17 +11,18 @@ export default async function Home() {
 
   return (
     <main>
-      
+      <section className="d-flex justify-content-between">
+        <h1>Bookshelf</h1>
+        <Button as={Link as any} href="/new">
+          Add Book
+        </Button>
+      </section>
+
       {books.map(book => (
         <Card key={book.id} body>
           <pre>{JSON.stringify(book, null, 2)}</pre>
         </Card>
       ))}
-
-      <Button as={Link as any} href="/new">
-        Add Book
-      </Button>
-      
     </main>
   )
 }
