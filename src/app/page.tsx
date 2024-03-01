@@ -1,5 +1,3 @@
-'use server'
-
 import Link from 'next/link'
 
 import Card from 'react-bootstrap/Card'
@@ -11,6 +9,8 @@ import BookDeleteButton from '@/components/BookDeleteButton'
 import api from '@/util/api'
 
 const DESCRIPTION_TRUNCATE_LENGTH = 200
+
+export const dynamic = 'force-dynamic'
 
 export default async function Home() {
   const booksResponse = await api.get('/books')

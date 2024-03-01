@@ -21,11 +21,11 @@ export async function createBook(formData: FormData) {
     author: formData.get('author'),
     description: formData.get('description'),
     imageUrl: formData.get('imageUrl'),
-  }
+  } as BookForm
 
   // Will throw if there's a validation error
   const validatedBook = await bookValidator.validate(inputBook)
 
   // Will throw if the API call fails
-  await api.post('books', validatedBook)
+  await api.post('/books', validatedBook)
 }
