@@ -1,1 +1,11 @@
+// Import our brand font
+// @import url('https://fonts.googleapis.com/css2?family=Sulphur+Point:wght@300;400&display=swap');
+
+// Define our custom vars
+$primary: #199C7D;
+
 @import "../../node_modules/bootstrap/scss/bootstrap";
+
+.btn-primary {
+  @extend .text-light;
+}

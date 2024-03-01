@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Container>
+        <Container className="my-5">
           {children}
         </Container>
       </body>
