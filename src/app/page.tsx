@@ -10,7 +10,7 @@ import BookDeleteButton from '@/components/BookDeleteButton'
 
 import api from '@/util/api'
 
-const DESCRIPTION_TRUNCATE_LENGTH = 275
+const DESCRIPTION_TRUNCATE_LENGTH = 220
 
 export default async function Home() {
   const booksResponse = await api.get('/books')
