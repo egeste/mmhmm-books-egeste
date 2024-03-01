@@ -1,24 +1,32 @@
 'use client'
 
-import { useCallback } from 'react'
+import { useCallback, useState } from 'react'
 import { createBook } from '@/app/actions'
 
+import Alert from 'react-bootstrap/Alert'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import FormGroup from 'react-bootstrap/FormGroup'
+import FormLabel from 'react-bootstrap/FormLabel'
 import FormControl from 'react-bootstrap/FormControl'
 import FloatingLabel from 'react-bootstrap/FloatingLabel'
 import CloseButton from 'react-bootstrap/CloseButton'
-import { FormLabel } from 'react-bootstrap'
 
 export default function NewBook() {
+  const [error, setError] = useState<string | undefined>(undefined)
+
   const onClickClose = useCallback(() => {
     window.location.pathname = '/'
   }, [])
 
   const onCreateBook = useCallback(async (formData : FormData) => {
-    const result = await createBook(formData)
-    onClickClose()
+    setError(undefined)
+    try {
+      await createBook(formData)
+      onClickClose()
+    } catch (e) {
+      setError((e as Error).message)
+    }
   }, [onClickClose])
 
   return (
@@ -52,6 +60,12 @@ export default function NewBook() {
             </FloatingLabel>
           </FormGroup>
         </div>
+
+        {error && (
+          <Alert variant="danger">
+            <strong>Error:</strong> {error}
+          </Alert>
+        )}
 
         <Button type="submit">
           Save
