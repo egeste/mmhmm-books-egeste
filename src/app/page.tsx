@@ -28,7 +28,7 @@ export default async function Home() {
       <section className="d-grid gap-4 my-4">
         {books.map(book => (
           <Card key={book.id} body className="shadow">
-            <Image src={book.imageUrl} alt={book.title} className="float-start me-3" />
+            <Image src={book.imageUrl} alt={book.title} className="float-start me-3" style={{ maxWidth: 125 }} />
             <div className="d-grid gap-3">
               <header>
                 <BookDeleteButton book={book} />
